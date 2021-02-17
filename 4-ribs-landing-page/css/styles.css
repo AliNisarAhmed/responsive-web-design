@@ -46,12 +46,17 @@ h2 + p {
 }
 
 .top-text {
+	display: inline;
 	font-size: 0.625rem;
-	font-weight: 900;
+	margin: 0;
+	padding-top: 2px;
 	color: #f18119;
-	letter-spacing: 1px;
-
+	font-weight: 900;
+	text-transform: uppercase;
 	order: -1;
+	border-top: 5px solid #f18119;
+	border-image: linear-gradient(to right, #ffa51d, #ff713b) 1;
+	margin: 0 auto;
 }
 
 .fine-print {
@@ -67,7 +72,8 @@ strong {
 
 .intro {
 	background-color: #404040;
-	background-image: url(../images/dark-ribs.jpg);
+	background-image: url(../images/ribs.jpg);
+	background-blend-mode: multiply;
 	padding: 0 0.5em 2em;
 }
 
@@ -88,7 +94,7 @@ strong {
 .main-container {
 	display: flex;
 	flex-direction: column;
-align-items: center;
+	align-items: center;
 }
 
 .main-container,
@@ -111,8 +117,14 @@ align-items: center;
 
 input {
 	margin-bottom: 0.75em;
-	padding: .25em;
+	padding: 0.25em;
 	border: 1px solid gray;
+	transform: scale(1);
+	transition: transform 250ms;
+}
+
+input:focus {
+	transform: scale(1.1);
 }
 
 input,
@@ -120,6 +132,29 @@ input,
 	width: 100%;
 	text-align: center;
 	border-radius: 5px;
+}
+
+.btn {
+	display: inline-block;
+	padding: 1em 1.5em;
+	font-size: 0.625rem;
+	text-transform: uppercase;
+	font-weight: 900;
+	letter-spacing: 1px;
+	border: 0;
+	cursor: pointer;
+}
+
+.btn-primary {
+	background: linear-gradient(to right, #ffa51d, #ff713b);
+	color: #fff;
+	transform: scale(1);
+	transition: transform 250ms;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+	transform: scale(1.1);
 }
 
 /* MEDIA QUERIES */
@@ -136,9 +171,6 @@ input,
 	h1 + p,
 	h2 {
 		font-size: 1.75rem;
-	}
-
-	.top-text {
 	}
 
 	.container {
