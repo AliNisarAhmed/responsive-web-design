@@ -1,0 +1,108 @@
+:root {
+	--primary: #05cbe9;
+	--secondary: #111d4a;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	display: flex;
+	place-items: center;
+}
+
+.card {
+	width: 90%;
+	max-width: 800px;
+	margin: 0 auto;
+	background: var(--secondary);
+	color: #fff;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.card-img {
+	object-fit: cover;
+	/* height: 150px; */
+	flex-basis: 200px;
+	min-width: 0;
+	min-height: 0;
+}
+
+.card-content {
+	padding: 1em;
+	font-size: 1.75rem;
+	margin: 0;
+}
+
+.card-title,
+.card-read-time,
+.card-btn {
+	font-family: 'Blinker', sans-serif;
+}
+
+.card-title {
+	color: var(--primary);
+	font-size: 1.75rem;
+	font-family: 'Blinker', sans-serif;
+}
+
+.card-body {
+	font-size: 1rem;
+	font-family: 'Source Sans Pro', sans-serif;
+	line-height: 1.6;
+}
+
+.card-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin-top: 3em;
+}
+
+.card-read-time {
+	margin: 0;
+	font-size: 16px;
+	opacity: 0.6;
+	line-height: 1;
+}
+
+.card-read-time span {
+	font-weight: 700;
+	display: block;
+	font-size: 1.25em;
+}
+
+.card-btn {
+	font-size: 1.25rem;
+	color: var(--secondary);
+	background: var(--primary);
+	text-decoration: none;
+	font-weight: 700;
+	padding: 0.35em 1em;
+	letter-spacing: 1px;
+}
+
+@media (min-width: 600px) {
+	.card {
+		flex-direction: row;
+	}
+
+	.card-img {
+		/* actually shotens the image, wtf!!! */
+		/* height: 300px; */
+	}
+
+	.card-body {
+		margin-bottom: auto;
+		font-size: 1.25rem;
+		max-width: 500px;
+	}
+
+	.card-title {
+		font-size: 2.25rem;
+	}
+
+}
