@@ -45,13 +45,72 @@ strong {
 	word-spacing: 1px;
 }
 
+.section-title {
+	font-size: 1.25rem;
+	color: #000;
+	margin-top: 1.25em;
+}
+
+/* ========================
+	general layout
+===========================*/
+
+.main-grid {
+	display: grid;
+	grid-template-columns: minmax(1em, 1fr) minmax(260px, 500px) minmax(1em, 1fr);
+}
+
+/* footer */
+
+.footer {
+	background-color: #ebebeb;
+	padding: 4em 0;
+	text-align: center;
+}
+
+.footer-main,
+.social-list {
+	grid-column: 2 / -2;
+}
+
+.social-links {
+	order: -1;
+}
+
+.footer-logo,
+.footer-text,
+.footer-fineprint {
+	opacity: 0.3;
+}
+
+.footer-fineprint {
+	font-size: 0.75;
+	margin-top: 4em;
+}
+
+.social-list {
+	list-style: none;
+	margin: 0 0 2em;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+}
+
+.social-link {
+	color: #000;
+	font-size: 1.75rem;
+	margin: 0 0.5em;
+}
+
+.social-link:hover {
+	color: #777;
+}
+
 /* ========================
 	hero section
 ===========================*/
 
 .hero {
-	display: grid;
-	grid-template-columns: minmax(1em, 1fr) minmax(260px, 500px) minmax(1em, 1fr);
 	background-image: url(../img/hero-bg.jpg);
 	background-size: cover;
 	object-fit: cover;
@@ -62,5 +121,18 @@ strong {
 }
 
 .hero > * {
+	grid-column: 2 / -2;
+}
+
+/* ========================
+	info section
+===========================*/
+
+.info {
+	padding: 4em 0;
+	text-align: center;
+}
+
+.col-1 {
 	grid-column: 2 / -2;
 }
