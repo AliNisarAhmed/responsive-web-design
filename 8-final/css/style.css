@@ -58,6 +58,13 @@ strong {
 .main-grid {
 	display: grid;
 	grid-template-columns: minmax(1em, 1fr) minmax(260px, 500px) minmax(1em, 1fr);
+	grid-gap: 0 2em;
+}
+
+@media (min-width: 600px) {
+	.main-grid {
+		grid-template-columns: minmax(1em, 1fr) repeat(3, minmax(150px, 320px)) minmax(1em, 1fr);
+	}
 }
 
 /* footer */
@@ -66,15 +73,19 @@ strong {
 	background-color: #ebebeb;
 	padding: 4em 0;
 	text-align: center;
+
+	grid-template-areas:
+		". social ."
+		". main .";
 }
 
-.footer-main,
-.social-list {
-	grid-column: 2 / -2;
+.footer-main {
+	grid-area: main;
 }
 
 .social-links {
 	order: -1;
+	grid-area: social;
 }
 
 .footer-logo,
@@ -106,6 +117,21 @@ strong {
 	color: #777;
 }
 
+@media (min-width: 600px) {
+	.footer {
+		grid-template-areas:
+			". main main social ."
+	}
+
+	.footer-main {
+		text-align: left;
+	}
+
+	.social-list {
+		justify-content: flex-end;
+	}
+}
+
 /* ========================
 	hero section
 ===========================*/
@@ -113,7 +139,7 @@ strong {
 .hero {
 	background-image: url(../img/hero-bg.jpg);
 	background-size: cover;
-	object-fit: cover;
+	background-position: bottom;
 	height: 100vh;
 	width: 100;
 	color: #fff;
@@ -122,6 +148,17 @@ strong {
 
 .hero > * {
 	grid-column: 2 / -2;
+}
+
+@media (min-width: 600px) {
+
+	.hero {
+		padding: 6em 0;
+	}
+
+	.hero > * {
+		grid-column: 2 / span 2;
+	}
 }
 
 /* ========================
@@ -133,6 +170,17 @@ strong {
 	text-align: center;
 }
 
-.col-1 {
+.col {
 	grid-column: 2 / -2;
+}
+
+@media (min-width: 600px) {
+	.col {
+		grid-column: span 1;
+	}
+
+	/* to stop things from starting in the gutter */
+	.col:first-child {
+		grid-column: 2 / span 1;
+	}
 }
