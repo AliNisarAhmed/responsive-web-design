@@ -73,6 +73,12 @@ strong {
 	background: black;
 }
 
+.header-home {
+	background: transparent;
+	position: absolute;
+	width: 100%;
+}
+
 .header-content {
 	display: flex;
 	grid-column: 2 / -2;
@@ -92,6 +98,7 @@ strong {
 	right: 0;
 	bottom: 0;
 	transform: translateX(0);
+	transition: transform 250ms;
 }
 
 .navigation-open {
@@ -104,7 +111,6 @@ strong {
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	border: 1px solid magenta;
 	align-items: center;
 	justify-content: space-around;
 	flex-direction: column;
@@ -133,6 +139,44 @@ strong {
 	position: absolute;
 }
 
+.open-nav {
+	border: 0;
+	background: 0;
+	cursor: pointer;
+	color: #fff;
+	padding: 0.5em;
+	margin-left: auto;
+	font-size: 1.5em;
+}
+
+@media (min-width: 600px) {
+	.open-nav,
+	.close-nav {
+		display: none;
+	}
+
+	.nav {
+		position: initial;
+	}
+
+	.nav-list {
+		flex-direction: row;
+		justify-content: flex-start;
+	}
+
+	.nav-item {
+		margin-left: 2em;
+	}
+
+	.nav-link {
+		font-size: 1rem;
+	}
+
+	.header-home nav {
+		background: transparent;
+	}
+}
+
 /* footer */
 
 .footer {
@@ -141,8 +185,8 @@ strong {
 	text-align: center;
 
 	grid-template-areas:
-		". social ."
-		". main .";
+		'. social .'
+		'. main .';
 }
 
 .footer-main {
@@ -185,8 +229,7 @@ strong {
 
 @media (min-width: 600px) {
 	.footer {
-		grid-template-areas:
-			". main main social ."
+		grid-template-areas: '. main main social .';
 	}
 
 	.footer-main {
@@ -209,17 +252,22 @@ strong {
 	height: 100vh;
 	width: 100;
 	color: #fff;
-	padding: 4em 0;
+	padding: 8em 0 4em;
 }
 
 .hero > * {
 	grid-column: 2 / -2;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 400px) {
+	.hero > * {
+		margin-right: 20%;
+	}
+}
 
+@media (min-width: 600px) {
 	.hero {
-		padding: 6em 0;
+		padding: 10em 0 6em;
 	}
 
 	.hero > * {
